@@ -1,23 +1,28 @@
-# Student Grade Tracker
+# Student Grade Tracker v3.0
 
-# 1. Ask for the student's name
+# 1. Inputs
 name = input("Enter the student's name: ")
-
-# 2. Ask for 3 subject marks
-# We convert the input to a float so we can perform calculations
 mark1 = float(input("Enter mark for Subject 1: "))
 mark2 = float(input("Enter mark for Subject 2: "))
 mark3 = float(input("Enter mark for Subject 3: "))
 
-# 3. Calculate the average
+# 2. Calculation
 average = (mark1 + mark2 + mark3) / 3
 
-# 4. Display the results
-print(f"\n--- Results for {name} ---")
-print(f"Average Mark: {average:.2f}")
-
-if average >= 40:
-    print("Status: Pass")
+# 3. Grading Logic
+if average >= 75:
+    grade = "A"
+elif average >= 60:
+    grade = "B"
+elif average >= 40:
+    grade = "C"
 else:
-    print("Status: Fail")
-input("\nPress Enter to exit...")
+    grade = "Fail"
+
+# 4. Formatted Output
+print("-" * 30)
+print(f"Name   : {name}")
+print(f"Average: {average:.1f}")
+print(f"Grade  : {grade}")
+print("-" * 27)
+input("Press Enter to exit...")
